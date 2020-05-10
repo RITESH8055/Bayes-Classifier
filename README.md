@@ -75,7 +75,7 @@ cov52=cov_2
 def bivariate_normal(X,mu,cov):
     p = np.exp(((np.dot(np.dot(np.transpose(X-mu),np.linalg.inv(cov)),(X-mu))*(-0.5))))/(np.sqrt(np.pi *2*np.linalg.det(cov)))
     return(p)
-# b = bivariate_normal(,mu_0,cov10)
+ b = bivariate_normal(,mu_0,cov10)
 
 def Bayes_Classifier(d,mu0,mu1,mu2,cov0,cov1,cov2):
     f0 = bivariate_normal(d,mu0,cov0)
@@ -133,9 +133,9 @@ plt.scatter(X_train[indices_0, 0], X_train[indices_0, 1], c="r")
 plt.scatter(X_train[indices_1, 0], X_train[indices_1, 1], c="b")
 plt.scatter(X_train[indices_2, 0], X_train[indices_2, 1], c="g")  
 def Bayes_Classifier(d,mu0,mu1,mu2,cov0,cov1,cov2):
-#     f0 = np.random.multivariate_normal(d,mu0,cov0)
-#     f1 = np.random.multivariate_normal(d,mu1,cov1)
-#     f2 = np.random.multivariate_normal(d,mu2,cov2)
+     f0 = np.random.multivariate_normal(d,mu0,cov0)
+     f1 = np.random.multivariate_normal(d,mu1,cov1)
+     f2 = np.random.multivariate_normal(d,mu2,cov2)
     q0  = P0*f0/(P0*f0 + P1*f1+ P2*f2)
     q1  = P1*f1/(P0*f0 + P1*f1+ P2*f2)
     q2  = P2*f2/(P0*f0 + P1*f1+ P2*f2)
